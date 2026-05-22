@@ -1,0 +1,11 @@
+# Backend artifacts and dependencies
+node_modules/
+cache/
+artifacts/
+ipfs-storage/
+
+# Environment variables (never commit real .env)
+.env
+
+# IDE
+.vscode/
