@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Award,
@@ -48,6 +48,7 @@ interface DashboardSidebarProps {
 
 export function DashboardSidebar({ role, open, onClose }: DashboardSidebarProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { logout, user } = useAuth();
   const items =
     role === "student"
@@ -107,7 +108,11 @@ export function DashboardSidebar({ role, open, onClose }: DashboardSidebarProps)
 
         <div className="border-t border-border p-3">
           <button
-            onClick={() => { logout(); onClose(); }}
+            onClick={() => {
+              logout();
+              onClose();
+              navigate("/login");
+            }}
             className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
             <LogOut className="h-5 w-5" />
