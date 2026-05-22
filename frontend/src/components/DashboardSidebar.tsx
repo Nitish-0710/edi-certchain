@@ -111,7 +111,7 @@ export function DashboardSidebar({ role, open, onClose }: DashboardSidebarProps)
             onClick={() => {
               logout();
               onClose();
-              navigate("/login");
+              navigate("/");
             }}
             className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
